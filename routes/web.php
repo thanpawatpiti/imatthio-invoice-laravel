@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BillingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,6 +25,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\ResetPassword;
 use App\Http\Controllers\ChangePassword;
+use App\Http\Controllers\SettingController;
 
 Route::get('/home', function () {return redirect('/dashboard');})->middleware('auth');
 Route::get('/', function () {return redirect('/dashboard');})->middleware('auth');
@@ -44,6 +46,10 @@ Route::group(['middleware' => 'auth'], function () {
 	// Route::get('/profile-static', [PageController::class, 'profile'])->name('profile-static');
 	// Route::get('/sign-in-static', [PageController::class, 'signin'])->name('sign-in-static');
 	// Route::get('/sign-up-static', [PageController::class, 'signup'])->name('sign-up-static');
-	Route::get('/{page}', [PageController::class, 'index'])->name('page');
+	// Route::get('/{page}', [PageController::class, 'index'])->name('page');
 	Route::post('logout', [LoginController::class, 'logout'])->name('logout');
+
+    Route::get('/billing', [BillingController::class, 'index'])->name('billing.index');
+
+    Route::get('/setting', [SettingController::class, 'index'])->name('setting.index');
 });
