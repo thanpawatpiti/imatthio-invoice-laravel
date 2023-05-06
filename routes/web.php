@@ -50,6 +50,8 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
     Route::get('/billing', [BillingController::class, 'index'])->name('billing.index');
+    Route::get('/billing/create', [BillingController::class, 'create'])->name('billing.create');
+    Route::post('/billing/store', [BillingController::class, 'store'])->name('billing.store');
 
     Route::get('/setting', [SettingController::class, 'index'])->name('setting.index');
     Route::get('/setting/create/{type}', [SettingController::class, 'create'])->name('setting.create');
