@@ -26,8 +26,10 @@
                                     </div>
                                     <div class="d-flex align-items-center text-sm">
                                         {{ simpleDateFormat($bill->invoice_date) }}
-                                        <a class="btn btn-link text-dark text-sm mb-0 px-0 ms-4" href="{{ route('billing.pdf', ['id' => $bill->id]) }}" target="_blank"><i
+                                        <a class="btn btn-link text-dark text-sm mb-0 px-0 ms-4" href="{{ route('billing.pdf', ['id' => $bill->id, 'type' => 'invoice']) }}" target="_blank"><i
                                                 class="fas fa-file-pdf text-lg me-1"></i> PDF</a>
+                                        <a class="btn btn-link text-dark text-sm mb-0 px-0 ms-4" href="{{ route('billing.pdf', ['id' => $bill->id, 'type' => 'copy']) }}" target="_blank"><i
+                                                class="fas fa-file-pdf text-lg me-1"></i> PDF(copy)</a>
                                     </div>
                                 </li>
                             @endforeach

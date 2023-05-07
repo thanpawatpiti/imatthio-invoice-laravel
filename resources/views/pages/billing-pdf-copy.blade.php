@@ -54,7 +54,7 @@
                                 <img src="{{ public_path('images/' . $bill->headers->logo) }}" alt="Logo" style="width: 100px; height: 100px;">
                             @endif
                         </td>
-                        <td style="width: 25%; text-align: right;">ต้นฉบับ</td>
+                        <td style="width: 25%; text-align: right;">สำเนา</td>
                     </tr>
                 </table>
                 <hr style="border: 1px solid black;">
