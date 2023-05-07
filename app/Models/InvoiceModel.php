@@ -51,4 +51,9 @@ class InvoiceModel extends Model
     {
         return $this->belongsTo(ReceiptModel::class, 'recepts_id', 'id');
     }
+
+    public function directors()
+    {
+        return $this->belongsTo(DirectorModel::class, 'directors_id', 'id');
+    }
 }

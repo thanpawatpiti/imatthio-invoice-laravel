@@ -74,4 +74,20 @@ class BillingController extends Controller
 
         return redirect()->route('billing.index')->with('success', 'Billing created successfully.');
     }
+
+    public function pdf($id)
+    {
+        $bill = InvoiceModel::find($id);
+
+        // generate pdf
+        $pdf = \PDF::loadView('pages.billing-pdf', [
+            'bill' => $bill
+        ]);
+
+        // set paper size
+        $pdf->setPaper('A4', 'portrait');
+
+        // show pdf on browser
+        return $pdf->stream();
+    }
 }

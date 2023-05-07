@@ -26,8 +26,8 @@
                                     </div>
                                     <div class="d-flex align-items-center text-sm">
                                         {{ simpleDateFormat($bill->invoice_date) }}
-                                        <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"><i
-                                                class="fas fa-file-pdf text-lg me-1"></i> PDF</button>
+                                        <a class="btn btn-link text-dark text-sm mb-0 px-0 ms-4" href="{{ route('billing.pdf', ['id' => $bill->id]) }}" target="_blank"><i
+                                                class="fas fa-file-pdf text-lg me-1"></i> PDF</a>
                                     </div>
                                 </li>
                             @endforeach
