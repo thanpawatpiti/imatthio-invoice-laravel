@@ -4,7 +4,7 @@
         "api/index.php": { "runtime": "vercel-php@0.3.1" }
     },
     "routes": [
-        { "src": "/api/(.*)", "dest": "api/index.php" }
+        { "src": "/(.*)", "dest": "web.php" }
     ],
     "env": {
         "APP_NAME": "IMATTHIO INVOICE",
